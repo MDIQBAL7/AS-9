@@ -4,13 +4,16 @@ import './index.css'
 import App from './Root.jsx'
 
 import { createBrowserRouter } from "react-router";
-import { RouterProvider } from "react-router/dom";
+
 import Root from './Root.jsx';
 import Home from './Components/Home.jsx';
 import Profile from './Components/Profile.jsx';
 
 import Logout from './Components/Logout.jsx';
 import Login from './Components/Login.jsx';
+import { RouterProvider } from 'react-router/dom';
+import AuthProvider from './Context/AuthProvider.jsx';
+import Registration from './Components/Registration.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,11 +31,18 @@ const router = createBrowserRouter([
       },
       {
         path : 'logout', Component : Logout
+      },
+      {
+        path : 'registration', Component : Registration
       }
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
-   <RouterProvider router={router} />,
+   <StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />,
+    </AuthProvider>
+  </StrictMode>
 )

@@ -1,3 +1,4 @@
+import { MdOutlineArrowDropDownCircle } from "react-icons/md";
 import { NavLink } from "react-router";
 
 const Nav = ({ user, handleLogout }) => {
@@ -8,7 +9,7 @@ const Nav = ({ user, handleLogout }) => {
         {/* Mobile Menu Button */}
         <div className="dropdown lg:hidden">
           <label tabIndex={0} className="btn btn-ghost">
-            <MdOutlineArrowDropDownCircle />
+            <MdOutlineArrowDropDownCircle className="text-xl" />
           </label>
           <ul
             tabIndex={0}

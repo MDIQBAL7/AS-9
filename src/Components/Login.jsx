@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Login = () => {
-    const handleLogin = (e) => {
-        e.preventDefault();
-        
-    }
+  const handleLogin = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col">
@@ -29,6 +29,12 @@ const Login = () => {
                 <button className="btn btn-neutral mt-4">Login</button>
               </fieldset>
             </form>
+            <span>
+              {" "}
+              Don't have an acount
+              <Link to={"/registration"} className="text-blue-500"> Register </Link>
+              now
+            </span>
           </div>
         </div>
       </div>
