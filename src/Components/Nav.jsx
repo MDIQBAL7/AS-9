@@ -20,6 +20,9 @@ const Nav = () => {
       <li>
         <NavLink to="/profile">My Profile</NavLink>
       </li>
+      <li>
+        <NavLink to="/shoping">My Purchases</NavLink>
+      </li>
     </>
   );
   return (

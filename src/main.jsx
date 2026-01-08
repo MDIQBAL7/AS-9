@@ -16,6 +16,7 @@ import AuthProvider from "./Context/AuthProvider.jsx";
 import Registration from "./Components/Registration.jsx";
 import ToyDetails from "./Components/ToyDetails.jsx";
 import PrivateRoute from "./Context/PrivateRoute.jsx";
+import Shopping from "./Components/Shopping.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,10 +45,23 @@ const router = createBrowserRouter([
         Component: Registration,
       },
       {
-        path : 'details/:detailsid',
-        loader: ({params}) => fetch("/jsonData.json"),
-        element : <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
-      }
+        path: "details/:detailsid",
+        loader: ({ params }) => fetch("/jsonData.json"),
+        element: (
+          <PrivateRoute>
+            <ToyDetails></ToyDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "shoping",
+        loader: () => fetch("/jsonData.json"),
+        element: (
+          <PrivateRoute>
+            <Shopping></Shopping>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

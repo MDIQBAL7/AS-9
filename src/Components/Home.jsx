@@ -8,6 +8,7 @@ import { useLoaderData } from "react-router";
 import SingleCard from "./SingleCard";
 import EducationalValue from "./EducationalValue";
 import WhyChooseUs from "./WhyChooseUs ";
+import { Helmet } from "react-helmet";
 const Home = () => {
   const data = useLoaderData();
 
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <>
+    
       <HeroSlider></HeroSlider>
       <SingleCard></SingleCard>
       <EducationalValue></EducationalValue>
