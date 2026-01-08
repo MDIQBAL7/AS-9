@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+ul li .active{
+    border-bottom: 3px solid black;
+    font-weight: bold;
+}
+
+ul li .active:active{
+    background-color: rgb(179, 200, 26);
+}

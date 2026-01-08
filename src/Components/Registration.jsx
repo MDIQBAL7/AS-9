@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Registration = () => {
   const [error, setError] = useState("");
-  const { createUser } = use(AuthContext);
+  const { setUser, createUser } = use(AuthContext);
   const handleRegistration = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -29,13 +29,14 @@ const Registration = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result);
+        setUser(result);
       })
       .then((error) => {
         console.log(error.message);
       });
     e.target.reset();
   };
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col">
@@ -67,12 +68,13 @@ const Registration = () => {
                 </div>
                 <button className="btn btn-neutral mt-4">Register</button>
               </fieldset>
+           
             </form>
-           {
-            error &&  <p className="text-white bg-red-400 px-2 py-1 rounded-md">
-              {error}
-            </p>
-           }
+            {error && (
+              <p className="text-white bg-red-400 px-2 py-1 rounded-md">
+                {error}
+              </p>
+            )}
             <span>
               Already have an acount. Please{" "}
               <Link to={"/login"} className="text-blue-500">
