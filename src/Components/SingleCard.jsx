@@ -1,8 +1,8 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { NavLink, useLoaderData } from "react-router";
 const SingleCard = () => {
   const data = useLoaderData();
-  const { pictureURL, toyName, rating, availableQuantity, price } = data;
+  const { toyId, pictureURL, toyName, rating, availableQuantity, price } = data;
   return (
     <div className="bg-yellow-200">
       <h1 className="pt-17 mb-16 border-b-4 pb-3 mx-auto w-75  text-center text-5xl font-bold">Popular Toys</h1>
@@ -57,9 +57,9 @@ const SingleCard = () => {
 
                 {/* Action */}
                 <div className="card-actions mt-4">
-                  <button className="btn btn-primary btn-sm w-full">
+                  <NavLink to={`details/${card.toyId}`} className="btn btn-primary btn-sm w-full">
                     View Details
-                  </button>
+                  </NavLink>
                 </div>
               </div>
             </div>

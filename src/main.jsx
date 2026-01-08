@@ -14,6 +14,8 @@ import Login from "./Components/Login.jsx";
 import { RouterProvider } from "react-router/dom";
 import AuthProvider from "./Context/AuthProvider.jsx";
 import Registration from "./Components/Registration.jsx";
+import ToyDetails from "./Components/ToyDetails.jsx";
+import PrivateRoute from "./Context/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,11 @@ const router = createBrowserRouter([
         path: "registration",
         Component: Registration,
       },
+      {
+        path : 'details/:detailsid',
+        loader: ({params}) => fetch("/jsonData.json"),
+        element : <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
+      }
     ],
   },
 ]);
