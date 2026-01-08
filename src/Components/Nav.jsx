@@ -7,7 +7,6 @@ import "../../src/App.css";
 
 const Nav = () => {
   const { user, signOutUser } = use(AuthContext);
-  console.log("This is a user", user.diaplayName);
 
   const handleSignout = () => {
     signOutUser(auth);
@@ -69,7 +68,7 @@ const Nav = () => {
           transition duration-300 whitespace-nowrap
         "
                   >
-                    {user.displayName}
+                    {user?.displayName}
                   </span>
                 </div>
               </div>
