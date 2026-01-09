@@ -10,9 +10,9 @@ const ToyDetails = () => {
   console.log("this is parama", detailsid);
   const toy = data.find((singleData) => singleData.toyId === id);
   return (
-    <div>
+    <div className="bg-yellow-200">
       {toy ? (
-        <section className="py-12 bg-base-200">
+        <section className="py-12">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
               {/* Image Section */}
@@ -85,12 +85,12 @@ const ToyDetails = () => {
               </div>
             </div>
           </div>
-          <div className="hero bg-base-200">
+          <div className="hero">
             <div className="hero-content flex-col">
               <div className="text-center lg:text-left"></div>
               <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <div className="card-body">
-                  <fieldset className="fieldset">
+                <div className="card-body ">
+                  <fieldset className="fieldset ">
                     <label className="label">Email</label>
                     <input type="email" className="input" placeholder="Email" />
                     <label className="label">Password</label>

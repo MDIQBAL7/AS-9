@@ -24,7 +24,7 @@ const EducationalValue = () => {
     },
   ];
   return (
-    <section className="bg-yellow-200 py-14">
+    <section className="bg-yellow-200 py-14 px-5">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">

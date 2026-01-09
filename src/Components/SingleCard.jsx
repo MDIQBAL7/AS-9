@@ -6,7 +6,7 @@ const SingleCard = () => {
   return (
     <div className="bg-yellow-200">
       <h1 className="pt-17 mb-16 border-b-4 pb-3 mx-auto w-75  text-center text-5xl font-bold">Popular Toys</h1>
-      <div className="bg-yellow-200 grid grid-cols-3 gap-4 justify-between items-center max-w-6xl mx-auto">
+      <div className="bg-yellow-200 grid grid-cols-1 sm:grid-cols-3 gap-4 justify-between items-center max-w-6xl mx-auto">
         {data.map((card) => {
           return (
             <div className="card  bg-base-100 shadow-lg hover:shadow-xl transition duration-300">

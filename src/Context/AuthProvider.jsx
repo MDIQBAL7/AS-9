@@ -6,10 +6,10 @@ import { auth } from '../firebaseinit';
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const provider = new GoogleAuthProvider();
-    const createUser = (email, password) => {
+    const createUser = (email, password,) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
-    const signIn = (email, password) => {
+    const signIn = (email, password, ) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
     const signOutUser = () => {

@@ -17,6 +17,8 @@ import Registration from "./Components/Registration.jsx";
 import ToyDetails from "./Components/ToyDetails.jsx";
 import PrivateRoute from "./Context/PrivateRoute.jsx";
 import Shopping from "./Components/Shopping.jsx";
+import NotFound from "./Components/NotFound.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        Component: Profile,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "login",
@@ -62,8 +68,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      
     ],
   },
+  {
+        path : '*',
+        Component : NotFound
+      }
 ]);
 
 createRoot(document.getElementById("root")).render(

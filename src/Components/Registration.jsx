@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useRef, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { Link } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,11 +7,11 @@ const Registration = () => {
 
   const [error, setError] = useState("");
   const { setUser, createUser, googleSignIn } = use(AuthContext);
+
   const handleRegistration = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-
     // Password validation
     if (!/[A-Z]/.test(password)) {
       setError("Password must have at least one uppercase letter");
@@ -77,6 +77,7 @@ const Registration = () => {
                   className="input"
                   placeholder="Password"
                 />
+               
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
