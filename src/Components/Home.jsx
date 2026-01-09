@@ -19,9 +19,9 @@ const Home = () => {
     <>
     
       <HeroSlider></HeroSlider>
-     {setLoading(true)}
+   
       <SingleCard></SingleCard>
-    {setLoading(false)}
+
        <EducationalValue></EducationalValue>;
       <WhyChooseUs></WhyChooseUs>
     </>

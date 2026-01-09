@@ -7,7 +7,7 @@ import "../../src/App.css";
 
 const Nav = () => {
   const { user, signOutUser } = use(AuthContext);
-
+console.log('this is user', user);
   const handleSignout = () => {
     signOutUser(auth);
   };

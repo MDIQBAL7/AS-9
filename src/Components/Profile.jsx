@@ -12,8 +12,8 @@ const Profile = () => {
           {/* Avatar */}
           <div className="flex-shrink-0">
             <img
-              src={user.photoURL}
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary"
+              src={user.photoURL ? `${user.photoURL}` : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKfj6RsyRZqO4nnWkPFrYMmgrzDmyG31pFQ&s'}
+              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-0"
             />
           </div>
 
