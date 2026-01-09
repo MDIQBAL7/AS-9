@@ -1,9 +1,12 @@
-import React, { use } from 'react';
+import React, { use, useEffect } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 
 const Profile = () => {
     const {user} = use(AuthContext);
-    console.log('this is a user for iqbal', user);
+
+useEffect(() => {
+    document.title = "Profile | ToyTopia";
+  }, []);
     return (
          <section className="py-12 bg-yellow-200">
       <div className="max-w-4xl mx-auto px-4">

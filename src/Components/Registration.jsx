@@ -1,4 +1,4 @@
-import React, { use, useRef, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { Link } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
@@ -52,6 +52,10 @@ const Registration = () => {
         toast.error(error.message);
       });
   };
+
+  useEffect(() => {
+        document.title = "Registration | ToyTopia";
+      }, []);
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col">

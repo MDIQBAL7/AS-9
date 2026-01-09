@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Sample purchased data
 const purchasedData = [
@@ -29,6 +29,9 @@ const purchasedData = [
 ];
 
 const Shopping = () => {
+  useEffect(() => {
+      document.title = "Purchases | ToyTopia";
+    }, []);
   return (
     <section className="py-12 bg-base-200">
       <div className="max-w-6xl mx-auto px-4">

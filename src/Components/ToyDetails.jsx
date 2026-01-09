@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -9,6 +9,11 @@ const ToyDetails = () => {
   const id = Number(detailsid);
   console.log("this is parama", detailsid);
   const toy = data.find((singleData) => singleData.toyId === id);
+
+  useEffect(() => {
+    document.title = "Details | ToyTopia";
+  }, []);
+
   return (
     <div className="bg-yellow-200">
       {toy ? (

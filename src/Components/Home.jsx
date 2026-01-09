@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -12,9 +12,11 @@ import { Helmet } from "react-helmet";
 import { AuthContext } from "../Context/AuthContext";
 const Home = () => {
   const data = useLoaderData();
-  const {setLoading} =  use(AuthContext);
   console.log("this s data of loader", data);
 
+    useEffect(() => {
+    document.title = "Home | ToyTopia";
+  }, []);
   return (
     <>
     
