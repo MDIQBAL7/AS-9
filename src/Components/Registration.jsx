@@ -3,8 +3,9 @@ import { AuthContext } from "../Context/AuthContext";
 import { Link } from "react-router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Registration = () => {
-
+  const [see, setSee] = useState(false);
   const [error, setError] = useState("");
   const { setUser, createUser, googleSignIn } = use(AuthContext);
 
@@ -48,7 +49,7 @@ const Registration = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.message)
+        toast.error(error.message);
       });
   };
   return (
@@ -66,18 +67,25 @@ const Registration = () => {
                 <input
                   name="email"
                   type="email"
-                  className="input"
+                  className="input  p-3 focus:outline-0 focus:outline-offset-0focus:outline-none  border-1 rounded-lg"
                   placeholder="Email"
                 />
                 {/* Password  */}
                 <label className="label">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                />
-               
+                <div className="flex items-center border-1 rounded-lg">
+                  <input
+                    name="password"
+                    type = {see ? 'text' : 'password'}
+                    className="input border-0 p-3  focus:outline-0 focus:outline-offset-0 bg-red-50 focus:outline-none rounded-l-lg"
+                    placeholder="Password"
+                  />
+                  <span onClick={() => setSee(!see)} className="p-3.5 border-0 focus:outline-0 focus:outline-offset-0 bg-red-50 focus:outline-none rounded-r-lg">
+                    {
+                      see ? <FaEye /> : <FaEyeSlash /> 
+                    }
+                  </span>
+                </div>
+
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>

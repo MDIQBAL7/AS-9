@@ -3,8 +3,10 @@ import { Link } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+  const [see, setSee] = useState(false);
   const notify = () => toast("Succesfully Login");
   const [errors, setErrors] = useState("");
   const { signIn, googleSignIn, setUser } = use(AuthContext);
@@ -18,7 +20,6 @@ const Login = () => {
         console.log(result);
         notify();
         setErrors("");
-      
       })
       .catch((err) => {
         console.log(err);
@@ -26,7 +27,6 @@ const Login = () => {
         toast.error(err.message);
       });
     e.target.reset();
-    
   };
 
   const handleGoogleSignIn = () => {
@@ -55,18 +55,28 @@ const Login = () => {
                 <input
                   name="email"
                   type="email"
-                  className="input"
+                  className="input border-0 p-3  focus:outline-0 focus:outline-offset-0  focus:outline-none rounded-l-lg"
                   placeholder="Email"
                 />
                 {/* Password  */}
+            
+           
                 <label className="label">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                />
-                
+                <div className="flex items-center border-1 rounded-lg">
+                  <input
+                    name="password"
+                    type={see ? "text" : "password"}
+                    className="input border-0 p-3  focus:outline-0 focus:outline-offset-0 bg-red-50 focus:outline-none rounded-l-lg"
+                    placeholder="Password"
+                  />
+                  <span
+                    onClick={() => setSee(!see)}
+                    className="p-3.5 border-0 focus:outline-0 focus:outline-offset-0 bg-red-50 focus:outline-none rounded-r-lg"
+                  >
+                    {see ? <FaEye /> : <FaEyeSlash />}
+                  </span>
+                </div>
+
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
@@ -108,7 +118,7 @@ const Login = () => {
             </button>
 
             <ToastContainer position="top-right" autoClose={3000} />
-              <ToastContainer autoClose={3000} />
+            <ToastContainer autoClose={3000} />
             <span>
               Don't have an acount
               <Link to={"/registration"} className="text-blue-500">

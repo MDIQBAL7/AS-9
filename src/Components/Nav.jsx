@@ -26,7 +26,7 @@ const Nav = () => {
     </>
   );
   return (
-    <div className="navbar bg-amber-200 shadow-md px-4 md:px-8 fixed top-0 z-20">
+    <div className="navbar bg-amber-200 shadow-md px-4 md:px-8 ">
       {/* Left: Logo */}
       <div className="navbar-start">
         {/* Mobile Menu Button */}
